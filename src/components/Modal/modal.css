@@ -61,6 +61,14 @@
     top: 131px;
 }
 
+.bonus{
+    display: flex;
+    width: 253.57px;
+    height: 142px;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
 /* Close Button */
 .close {
     color: #aaa;

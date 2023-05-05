@@ -1,0 +1,42 @@
+
+.email_input {
+    margin-top: 16px;;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+    padding-left: 150px;
+}
+
+.ele {
+    width: 326px;
+    height: 36px;
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 20px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.button_reg{
+    margin-top: 40px;
+    width: 327px;
+    height: 36px;
+    background: linear-gradient(259.04deg, #EF4A01 22.61%, #F6DF00 83.4%);
+    box-shadow: 0px 12px 14px rgba(239, 132, 0, 0.35);
+    border-radius: 20px;
+}
+.span_reg{
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}

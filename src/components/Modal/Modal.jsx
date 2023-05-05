@@ -4,6 +4,9 @@ import itembg from "../../assets/itembg.svg"
 import newleft from "../../assets/new.svg"
 import newright from "../../assets/new2.svg"
 import casino from "../../assets/casino.svg"
+import {RegistrationForm} from "../PhoneRegistrationForm/button/Button.jsx";
+
+
 
 export const Modal = () => {
 
@@ -20,15 +23,12 @@ export const Modal = () => {
                 <div className="newright">
                     <img src={newright} alt=""/>
                 </div>
-
                 <div className="modal__content">
-
                     <Logo/>
+
+                    <RegistrationForm/>
                 </div>
-
             </div>
-
-
         </div>
     )
 }
