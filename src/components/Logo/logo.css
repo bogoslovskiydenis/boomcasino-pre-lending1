@@ -1,0 +1,9 @@
+
+
+.form_header > img {
+   display: flex;
+    width: 253.57px;
+    height: 142px;
+    justify-content: center;
+    margin: 0 auto 24px;
+}

@@ -1,0 +1,77 @@
+/*Modal CSS*/
+.modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    display: flex;
+    overflow: auto; /* Enable scroll if needed */
+    background: linear-gradient(180deg, #4010A6 56.65%, rgba(64, 16, 166, 0) 99.03%);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_items {
+
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    display: flex;
+    overflow: auto; /* Enable scroll if needed */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content */
+.modal__content {
+    position: fixed;
+    padding: 48px 32px;
+    margin: auto;
+    width: 700px;
+    height: 1040px;
+    left: 610px;
+    top: 20px;
+
+    background: rgba(16, 2, 45, 0.7);
+    border-radius: 40px;
+}
+.newleft{
+    position: absolute;
+    width: 473.07px;
+    height: 401.81px;
+    left: 61px;
+    top: -18px;
+}
+.casino{
+    position: absolute;
+    width: 421.53px;
+    height: 150.13px;
+    left: 87px;
+    top: 183.64px;
+}
+.newright{
+    position: absolute;
+    width: 486px;
+    height: 103px;
+    left: 1388px;
+    top: 131px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
