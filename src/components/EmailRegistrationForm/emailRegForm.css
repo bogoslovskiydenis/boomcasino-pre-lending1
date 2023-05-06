@@ -40,3 +40,16 @@
     text-align: center;
     color: #FFFFFF;
 }
+@media (min-width: 364px)  and (max-width:575.98px ){
+    .email_input {
+        margin-top: 16px;;
+        position: fixed;
+        left: -74px;
+    }
+}
+
+@media (max-width: 362px) {
+    .email_input {
+        display: none;
+    }
+}

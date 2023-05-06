@@ -13,9 +13,3 @@
 *::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
-
-#root{
-  display: flex;
-  flex-direction: column;
-}
-

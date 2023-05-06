@@ -7,3 +7,29 @@
     justify-content: center;
     margin: 0 auto 24px;
 }
+
+@media all and (max-width: 450px) {
+
+    .form_header > img {
+        width: 200px;
+        height: 100px;
+    }
+    .bonus{
+        height: 100px;
+    }
+}
+
+@media (min-width: 364px)  and (max-width:575.98px ){
+    .modal__content {
+        width: 450px;
+        left: 1px;
+        height: 100vh;
+    }
+    .form_header > img {
+        width: 200px;
+        height: 100px;
+    }
+    .bonus{
+        height: 100px;
+    }
+}
