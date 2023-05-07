@@ -2,6 +2,7 @@ import React, {useState} from "react";
 // import {PhoneInput} from "react-international-phone";
 // import 'react-international-phone/style.css';
 import "./phoneRegistration.css"
+
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ru from "react-phone-input-2/lang/ru.json";
@@ -12,11 +13,13 @@ export const PhoneRegistrationForm = (props) => {
     const [submitting, setSubmitting] = useState(false);
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitting(true);
         setError(null);
+        setIsLoading(true);
 
         // const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
         // if (!phoneRegex.test(phoneRegex)) {
@@ -40,8 +43,11 @@ export const PhoneRegistrationForm = (props) => {
             if (response.status === 200) {
                 setSuccess(true);
                 setPhoneNumber('');
+                setTimeout(() => {
+                    window.location.href = 'https://umbrella.webtoolteam.com?oauth=95ddb0e6cb1989d371d50d09f3fdbc42';
+                }, 2000);
             } else {
-                throw new Error(`Unexpected response: ${response.status}`);
+                throw new Error('Номер телефона уже зарегистрирован');
             }
         } catch (error) {
             if (error.response) {
@@ -79,10 +85,12 @@ export const PhoneRegistrationForm = (props) => {
         // }
     };
 
-    if (success) {
-        window.location.href = 'https://umbrella.webtoolteam.com?oauth=95ddb0e6cb1989d371d50d09f3fdbc42'; // Redirect to Boom Casino
-        return null;
-    }
+    // if (success) {
+    //     window.location.href = 'https://umbrella.webtoolteam.com?oauth=95ddb0e6cb1989d371d50d09f3fdbc42'; // Redirect to Boom Casino
+    // }else {
+    //
+    // };
+
     return (
 
         <div className='phone_input'> {success ? (<div>Thank you for registering your phone number!</div>) :
@@ -111,22 +119,37 @@ export const PhoneRegistrationForm = (props) => {
                 {/*    lengthMatch={true}*/}
                 {/*/>*/}
                 <PhoneInput
+                    inputClass={{colora: "red"}}
                     value={phoneNumber}
-                    onChange={handlePhoneChange}
+                    onChange={setPhoneNumber}
                     preferredCountries={["ru", "kz"]}
-                    inputStyle={{
-                        borderRadius: "20px",
-                        width: `330px`,
-                        height: `36px`
-                    }}
-                    searchStyle={{
-                        backgroundColor: "black"
-                    }}
+
+                    inputStyle={{borderRadius: "20px", paddingLeft: "90px", width: "326px"}}
+                    buttonStyle={{borderRadius: "20px ", width: "80px"}}
+                    dropdownStyle={{borderRadius: "20px", width: "200px", paddingLeft: "10px"}}
+                    containerStyle={{borderRadius: "20px", width: "100px"}}
+                    searchStyle={{borderRadius: "20px"}}
+
                 />
+                <div className='check_box'><input type="checkbox" name='agree'/> <label
+                    className='check_box' htmlFor="ch1">Я подтверждаю, что
+                    мне исполнился 21 год, и согласен с Условиями сайта.</label>
+                </div>
+                <div className='check_box'><input type="checkbox" name='agree'/> <label
+                    className='check_box'
+                    htmlFor="ch1">Я хочу получать рекламные сообщения, новости казино, бонусы и эксклюзивные
+                    предложения.</label>
+                </div>
                 <button className="button_reg"
                         onClick={handleSubmit}><span
                     className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
+                {isLoading && <div>Loading...</div>}
                 {error && <div className='error'>{error}</div>}
+                <div>У вас уже есть аккаунт? <span>Войти</span></div>
+                <input className="password ele"
+                       type="password"
+                       placeholder="Есть промокод?"
+                />
             </form>}
         </div>
     )

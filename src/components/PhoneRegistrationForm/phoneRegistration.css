@@ -37,6 +37,56 @@
     line-height: 31px;
     color: #FFFFFF;
 }
+
+.checkbox{
+    width:35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid black;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.check_box{
+    cursor: pointer;
+    align-items: center;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 450;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-top: 27px;
+    justify-content: center;
+}
+.check_box_input{
+    cursor: pointer;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 129px;
+    top: 513px;
+}
+.react-phone-input-2 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.react-tel-input {
+    font-size: 14px;
+    letter-spacing: .01rem;
+    border-radius: 5px;
+    line-height: 25px;
+    height: 35px;
+    width: 300px;
+    outline: none;
+}
+
 /*!*root=>react-international-phone*!*/
 :root {
     --react-international-phone-border-radius: 20px;

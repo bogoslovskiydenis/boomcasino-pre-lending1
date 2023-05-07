@@ -77,19 +77,8 @@
     cursor: pointer;
 }
 
-@media  (min-width: 1199.98px) and (max-width: 1980px){
-    .modal__content {
-        padding: 48px 32px;
-        position: fixed;
-        margin: auto;
-        background: rgba(16, 2, 45, 0.7);
-        border-radius: 40px;
-        width: 700px;
-        height: 1040px;
-    }
-}
 
-@media (min-width: 364px) and (max-width:575.98px ){
+@media (max-width: 364px) {
     .modal__content {
         background: linear-gradient(180deg, #4010A6 56.65%, rgba(64, 16, 166, 0) 99.03%);
         width: 380px;
@@ -101,9 +90,19 @@
     }
 }
 
-@media (min-width: 576px)  and (max-width:1199.98px ){
+@media (max-width: 576px)  and (max-width:1199.98px ){
     .modal__content {
         left: 1px;
-        margin-left: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal__content {
+        left: 1px;
+    }
+}
+@media (max-width:1199.98px ) {
+    .modal__content{
+        left: 1px;
     }
 }

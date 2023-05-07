@@ -22,9 +22,9 @@
 @media (min-width: 364px)  and (max-width:575.98px ){
     .form_header > img {
 
-        height: 80px;
+        height: 100px;
     }
     .bonus{
-        height: 80px;
+        height: 100px;
     }
 }
