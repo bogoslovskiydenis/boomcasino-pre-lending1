@@ -19,13 +19,13 @@ export const EmailRegistrationForm = (props) => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
         if (!emailRegex.test(email)) {
-            setError('Please enter a valid email address.');
+            setError('Пожалуйста, введите действительный адрес электронной почты');
             setSubmitting(false);
             return;
         }
 
         if (!passwordRegex.test(password)) {
-            setError('Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, and one digit.');
+            setError('Пароль должен состоять не менее чем из 8 символов и содержать как минимум одну строчную букву, одну прописную букву и одну цифру.');
             setSubmitting(false);
             return;
         }

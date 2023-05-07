@@ -1,7 +1,10 @@
 import React, {useState} from "react";
-import {PhoneInput} from "react-international-phone";
-import 'react-international-phone/style.css';
+// import {PhoneInput} from "react-international-phone";
+// import 'react-international-phone/style.css';
 import "./phoneRegistration.css"
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import ru from "react-phone-input-2/lang/ru.json";
 
 export const PhoneRegistrationForm = (props) => {
     const [isValid, setIsValid] = useState(false);
@@ -14,6 +17,13 @@ export const PhoneRegistrationForm = (props) => {
         e.preventDefault();
         setSubmitting(true);
         setError(null);
+
+        // const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
+        // if (!phoneRegex.test(phoneRegex)) {
+        //     setError('Пожалуйста, введите действительный телефон');
+        //     setSubmitting(false);
+        //     return;
+        // }
 
         try {
             const response = await fetch('https://umbrella-back.webtoolteam.com/api/external/auth/register', {
@@ -56,18 +66,17 @@ export const PhoneRegistrationForm = (props) => {
 
 
     const handlePhoneChange = (event) => {
-        const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
 
-        // setPhoneNumber(event.target.value);
-        const inputphoneNumber = event.target.value;
-
-        setPhoneNumber(!phoneRegex.test(inputphoneNumber))
-        if (inputphoneNumber) {
-            setError('Please enter a valid phone number.');
-            setIsValid(false);
-        } else {
-            setIsValid(true);
-        }
+        setPhoneNumber(event.target.value);
+        // const inputphoneNumber = event.target.value;
+        //
+        // setPhoneNumber(!phoneRegex.test(inputphoneNumber))
+        // if (inputphoneNumber) {
+        //     setError('Please enter a valid phone number.');
+        //     setIsValid(false);
+        // } else {
+        //     setIsValid(true);
+        // }
     };
 
     if (success) {
@@ -82,29 +91,45 @@ export const PhoneRegistrationForm = (props) => {
                 e.preventDefault();
                 alert(`Submitted phone: ${phoneNumber}`);
             }}>
+                {/*<PhoneInput*/}
+                {/*    inputStyle={{*/}
+                {/*        width: `285px`,*/}
+                {/*        height: `36px`*/}
+                {/*    }}*/}
+                {/*    flagClassName={{*/}
+                {/*        width: `30px`,*/}
+                {/*        height: `31px`, borderRadius: `50%`*/}
+                {/*    }}*/}
+                {/*    className='input_phone'*/}
+                {/*    defaultCountry="kz"*/}
+                {/*    defaultMask={` `}*/}
+                {/*    value={phoneNumber}*/}
+                {/*    onChange={setPhoneNumber}*/}
+                {/*    charAfterDialCode={' '}*/}
+                {/*    disableDialCodeAndPrefix={false}*/}
+                {/*    showDisabledDialCodeAndPrefix={false}*/}
+                {/*    lengthMatch={true}*/}
+                {/*/>*/}
                 <PhoneInput
+                    value={phoneNumber}
+                    onChange={handlePhoneChange}
+                    preferredCountries={["ru", "kz"]}
                     inputStyle={{
-                        width: `285px`,
+                        borderRadius: "20px",
+                        width: `330px`,
                         height: `36px`
                     }}
-                    flagClassName={{
-                        width: `30px`,
-                        height: `31px`, borderRadius: `50%`
+                    searchStyle={{
+                        backgroundColor: "black"
                     }}
-                    className='input_phone'
-                    defaultCountry="kz"
-                    defaultMask={` `}
-                    value={phoneNumber}
-                    onChange={setPhoneNumber}
-                    charAfterDialCode={' '}
-                    disableDialCodeAndPrefix={false}
-                    showDisabledDialCodeAndPrefix={false}
-                    lengthMatch={true}
                 />
                 <button className="button_reg"
-                        onClick={handleSubmit}><span className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
+                        onClick={handleSubmit}><span
+                    className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
                 {error && <div className='error'>{error}</div>}
             </form>}
         </div>
     )
 }
+
+

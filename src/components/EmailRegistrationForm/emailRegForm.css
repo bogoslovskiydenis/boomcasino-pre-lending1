@@ -46,7 +46,7 @@
 }
 @media (min-width: 364px)  and (max-width:575.98px ){
     .email_input{
-        display: table-row-group;
+        padding-right: 135px;
     }
     .ele {
         width: 300px;

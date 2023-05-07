@@ -1,7 +1,7 @@
 /*Modal CSS*/
 .modal {
     height: 100vh;
-    z-index: 1; /* Sit on top */
+    z-index: 1;
     left: 0;
     top: 0;
     overflow: auto;
@@ -9,11 +9,11 @@
 }
 
 .modal_items {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    overflow: auto; /* Enable scroll if needed */
+    overflow: auto;
 }
 
 /* Modal Content */
@@ -77,13 +77,6 @@
     cursor: pointer;
 }
 
-/*// Breakpoints*/
-/*$xs: 389.98px;*/
-/*$sm: 575.98px;*/
-/*$md: 767.98px;*/
-/*$lg: 991.98px;*/
-/*$xl: 1199.98px;*/
-
 @media  (min-width: 1199.98px) and (max-width: 1980px){
     .modal__content {
         padding: 48px 32px;
@@ -96,10 +89,10 @@
     }
 }
 
-@media (min-width: 364px)  and (max-width:575.98px ){
+@media (min-width: 364px) and (max-width:575.98px ){
     .modal__content {
         background: linear-gradient(180deg, #4010A6 56.65%, rgba(64, 16, 166, 0) 99.03%);
-        width: 300px;
+        width: 380px;
         left: 0;
         height: 100vh;
         border-radius: 0;
