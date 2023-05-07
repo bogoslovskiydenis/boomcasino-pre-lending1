@@ -98,14 +98,19 @@
 
 @media (min-width: 364px)  and (max-width:575.98px ){
     .modal__content {
-        width: 450px;
-        left: 1px;
+        background: linear-gradient(180deg, #4010A6 56.65%, rgba(64, 16, 166, 0) 99.03%);
+        width: 300px;
+        left: 0;
         height: 100vh;
+        border-radius: 0;
+        top: 0;
+        padding: 12px 0 0 0;
     }
 }
 
 @media (min-width: 576px)  and (max-width:1199.98px ){
     .modal__content {
         left: 1px;
+        margin-left: 100px;
     }
 }

@@ -5,7 +5,8 @@
     box-shadow: 0px 1px 4px rgba(240, 218, 9, 0.35);
     align-items: center;
 }
-.tabs{
+
+.tabs {
     display: flex;
     justify-content: center;
 }
@@ -28,4 +29,10 @@
     color: #FFFFFF;
     overflow: visible;
     box-sizing: border-box;
+}
+
+@media (min-width: 364px)  and (max-width: 575.98px ) {
+.btn_span{
+    font-size: 8px;
+}
 }

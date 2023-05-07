@@ -40,16 +40,24 @@
     text-align: center;
     color: #FFFFFF;
 }
+
+.error{
+    color: red;
+}
 @media (min-width: 364px)  and (max-width:575.98px ){
-    .email_input {
-        margin-top: 16px;;
-        position: fixed;
-        left: -74px;
+    .email_input{
+        display: table-row-group;
     }
+    .ele {
+        width: 300px;
+    }
+
+    .button_reg{
+        width: 300px;
+    }
+
 }
 
 @media (max-width: 362px) {
-    .email_input {
-        display: none;
-    }
+
 }

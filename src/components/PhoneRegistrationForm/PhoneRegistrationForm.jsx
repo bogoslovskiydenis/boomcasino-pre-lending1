@@ -36,11 +36,11 @@ export const PhoneRegistrationForm = (props) => {
         } catch (error) {
             if (error.response) {
                 if (error.response.status === 403) {
-                    setError('Unauthorized request. Please try again with valid credentials.');
+                    setError('');
                 } else if (error.response.status === 422) {
-                    setError('Phone number is already registered. Please enter a different phone number.');
+                    setError('Номер телефона уже зарегистрирован. Пожалуйста, введите другой номер телефона.');
                 } else {
-                    setError(`Request failed with status code ${error.response.status}`);
+                    setError(`Пожалуйста, введите другой номер телефона!`);
                 }
             } else if (error.message) {
                 setError(error.message);
@@ -102,8 +102,8 @@ export const PhoneRegistrationForm = (props) => {
                     lengthMatch={true}
                 />
                 <button className="button_reg"
-                        onClick={handleSubmit}>{submitting ? `Отправка` : `Войти`}</button>
-                {error && <div>{error}</div>}
+                        onClick={handleSubmit}><span className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
+                {error && <div className='error'>{error}</div>}
             </form>}
         </div>
     )

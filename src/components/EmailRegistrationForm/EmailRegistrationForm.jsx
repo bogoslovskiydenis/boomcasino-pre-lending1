@@ -57,7 +57,7 @@ export const EmailRegistrationForm = (props) => {
                 if (error.response.status === 403) {
                     setError('Unauthorized request. Please try again with valid credentials.');
                 } else if (error.response.status === 422) {
-                    setError('Email is already registered. Please enter a different email address.');
+                    setError('Электронная почта уже зарегистрирована. Пожалуйста, введите другой адрес электронной почты..');
                 } else {
                     setError(`Request failed with status code ${error.response.status}`);
                 }
@@ -86,7 +86,7 @@ export const EmailRegistrationForm = (props) => {
     return (
 
         <div className='email_input'>
-            <form action="" onSubmit={handleSubmit}>
+            <form action="" onSubmit={handleSubmit} className="form">
                 <input className="email ele"
                        value={email}
                        type="email"
@@ -100,9 +100,9 @@ export const EmailRegistrationForm = (props) => {
                        onChange={handlePasswordChange}
                 />
 
-                <button className="button_reg" disabled={submitting}
-                        onClick={handleSubmit}>{submitting ? `Отправка` : `Войти`}</button>
-                {error && <div>{error}</div>}
+                <button className="button_reg"
+                        onClick={handleSubmit}><span className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
+                {error && <div className='error'>{error}</div>}
             </form>
         </div>
     )
