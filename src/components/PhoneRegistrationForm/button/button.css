@@ -31,6 +31,9 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 490px) {
+
+}
 @media (min-width: 364px)  and (max-width: 575.98px ) {
     .btn_span {
         font-size: 12px;

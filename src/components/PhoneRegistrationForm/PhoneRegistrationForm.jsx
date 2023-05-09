@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import check from "../../assets/checkbox.svg";
+
 // import {PhoneInput} from "react-international-phone";
 // import 'react-international-phone/style.css';
 import "./phoneRegistration.css"
@@ -6,6 +8,7 @@ import "./phoneRegistration.css"
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ru from "react-phone-input-2/lang/ru.json";
+import Checkbox from "./checkbox/checkbox.jsx";
 
 export const PhoneRegistrationForm = (props) => {
     const [isValid, setIsValid] = useState(false);
@@ -45,7 +48,7 @@ export const PhoneRegistrationForm = (props) => {
                 setPhoneNumber('');
                 setTimeout(() => {
                     window.location.href = 'https://umbrella.webtoolteam.com?oauth=95ddb0e6cb1989d371d50d09f3fdbc42';
-                }, 2000);
+                }, 10000);
             } else {
                 throw new Error('Номер телефона уже зарегистрирован');
             }
@@ -119,7 +122,7 @@ export const PhoneRegistrationForm = (props) => {
                 {/*    lengthMatch={true}*/}
                 {/*/>*/}
                 <PhoneInput
-                    inputClass={{colora: "red"}}
+                    inputClass={{colors: "red"}}
                     value={phoneNumber}
                     onChange={setPhoneNumber}
                     preferredCountries={["ru", "kz"]}
@@ -131,23 +134,32 @@ export const PhoneRegistrationForm = (props) => {
                     searchStyle={{borderRadius: "20px"}}
 
                 />
-                <div className='check_box'><input type="checkbox" name='agree'/> <label
-                    className='check_box' htmlFor="ch1">Я подтверждаю, что
-                    мне исполнился 21 год, и согласен с Условиями сайта.</label>
-                </div>
-                <div className='check_box'><input type="checkbox" name='agree'/> <label
-                    className='check_box'
-                    htmlFor="ch1">Я хочу получать рекламные сообщения, новости казино, бонусы и эксклюзивные
-                    предложения.</label>
-                </div>
+                <Checkbox
+                    label="Я подтверждаю, что мне исполнился 21 год, и согласен с Условиями сайта.?"
+                    checked={true}/>
+                <Checkbox
+                    label="Я хочу получать рекламные сообщения, новости казино, бонусы и эксклюзивные предложения."
+                    checked={true}/>
+                {/*<div className='check_box2'>*/}
+                {/*    <input type="check_box2" name='agree'/>*/}
+                {/*    <label*/}
+                {/*    className='check_box2'*/}
+                {/*    htmlFor="ch1">Я хочу получать рекламные сообщения, новости казино, бонусы и эксклюзивные*/}
+                {/*    предложения.</label>*/}
+                {/*</div>*/}
                 <button className="button_reg"
                         onClick={handleSubmit}><span
                     className="span_btn">{submitting ? "ЗАРЕГИСТРИРОВАТЬСЯ" : "ЗАРЕГИСТРИРОВАТЬСЯ"}</span></button>
                 {isLoading && <div>Loading...</div>}
                 {error && <div className='error'>{error}</div>}
-                <div>У вас уже есть аккаунт? <span>Войти</span></div>
-                <input className="password ele"
-                       type="password"
+
+                <div className="account_reg">
+                    У вас уже есть аккаунт?
+                    <span className="account_reg_span">Войти
+                    </span>
+                </div>
+                <input className="promo"
+                       type="promo"
                        placeholder="Есть промокод?"
                 />
             </form>}

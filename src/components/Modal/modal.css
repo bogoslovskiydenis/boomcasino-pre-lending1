@@ -78,10 +78,10 @@
 }
 
 
-@media (max-width: 364px) {
+@media (max-width: 490px) {
     .modal__content {
         background: linear-gradient(180deg, #4010A6 56.65%, rgba(64, 16, 166, 0) 99.03%);
-        width: 380px;
+        width: 420px;
         left: 0;
         height: 100vh;
         border-radius: 0;
